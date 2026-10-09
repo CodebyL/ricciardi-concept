@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pools by Ricciardi &amp; Son (website concept)</title>
+<meta name="description" content="Website concept for Pools by Ricciardi & Son of Lindenhurst, NY: in-ground fiberglass pools set by crane, pools and spas across Nassau and Suffolk.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --deep:#0a3350;--deep-2:#0e4466;--pool:#1f7fb3;--pool-l:#7cc3e3;--foam:#dff1f8;
+ --sand:#e9dcc6;--trav:#f5eee2;--trav-d:#d6c4a5;--stone:#8a7458;--ink:#10202c;--muted:#4c5a64;--white:#fff;
+ --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:32px;--s6:48px;--s7:72px;--s8:112px;
+ --wrap:1240px;--r:6px;
+ --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Albert Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-size:18px;line-height:1.6;color:var(--ink);background:var(--trav);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid #f0a33a;outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--serif);font-style:normal;font-weight:600;line-height:1.05;margin:0;letter-spacing:-.01em}
+em,i{font-style:normal}
+p{margin:0 0 var(--s3)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s5)}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:var(--s2) var(--s3);z-index:100}
+.skip:focus{left:var(--s3);top:var(--s3)}
+.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pool);margin:0 0 var(--s3);display:flex;align-items:center;gap:var(--s3)}
+.eyebrow::before{content:"";width:40px;height:2px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:52px;padding:0 var(--s4);border-radius:var(--r);font:600 1rem var(--sans);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-deep{background:var(--deep);color:#fff}.btn-deep:hover{background:var(--deep-2)}
+.btn-ghost{border-color:var(--deep);color:var(--deep);background:transparent}.btn-ghost:hover{background:var(--deep);color:#fff}
+.btn-sand{background:var(--sand);color:var(--deep)}.btn-sand:hover{background:#fff}
+.btn svg{width:18px;height:18px}
+
+/* concept bar */
+.concept{background:var(--ink);color:#e8eef2;font-size:.82rem;text-align:center;padding:var(--s2) var(--s3);line-height:1.4}
+.concept a{color:#fff;font-weight:700}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(245,238,226,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(10,51,80,.12)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:76px}
+.brand{display:flex;align-items:center;gap:var(--s3);text-decoration:none;color:var(--deep)}
+.brand svg{width:44px;height:44px;flex:none}
+.brand b{font-family:var(--serif);font-weight:600;font-size:1.3rem;display:block;line-height:1.05}
+.brand small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+nav#nav ul{list-style:none;display:flex;gap:var(--s5);margin:0;padding:0}
+nav#nav a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--deep);padding:var(--s3) 0;display:inline-block;min-height:44px}
+nav#nav a:hover{color:var(--pool)}
+.hd-call{display:flex;align-items:center;gap:var(--s3)}
+.menu-btn{display:none;width:48px;height:48px;border:1.5px solid var(--deep);border-radius:var(--r);background:transparent;cursor:pointer;color:var(--deep)}
+.menu-btn span{display:block;width:20px;height:2px;background:currentColor;margin:4px auto;transition:transform .2s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;padding:var(--s7) 0 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--s6);align-items:end}
+.hero h1{font-size:clamp(2.6rem,5.6vw,5.2rem);color:var(--deep);font-weight:600;letter-spacing:-.025em}
+.hero h1 .lift{display:inline-block;color:var(--pool)}
+.hero-side p{font-size:1.15rem;color:var(--muted);max-width:30em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s4)}
+.section-draw{margin-top:var(--s6);position:relative}
+.section-draw svg{display:block;width:100%;height:auto}
+.draw-cap{display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:var(--s3) 0}
+.wave-anim{animation:drift 7s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-40px)}}
+
+/* proof */
+.proof{background:var(--deep);color:#fff}
+.proof .wrap{display:grid;grid-template-columns:auto 1fr 1fr 1fr;align-items:center;gap:var(--s5);padding-top:var(--s5);padding-bottom:var(--s5)}
+.score{display:flex;align-items:baseline;gap:var(--s3)}
+.score b{font-family:var(--serif);font-size:3.4rem;font-weight:600;line-height:1}
+.stars{display:flex;gap:2px}
+.stars svg{width:18px;height:18px}
+.proof-item{border-left:1px solid rgba(255,255,255,.22);padding-left:var(--s4)}
+.proof-item b{display:block;font-family:var(--serif);font-size:1.35rem;font-weight:600}
+.proof-item span{font-size:.92rem;color:#c5d9e6}
+
+/* services spec */
+.spec{padding:var(--s8) 0}
+.spec-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--s7)}
+.spec-head{position:sticky;top:120px;align-self:start}
+.spec-head h2{font-size:clamp(2.2rem,3.8vw,3.4rem);color:var(--deep)}
+.spec-head p{margin-top:var(--s4);color:var(--muted)}
+.rows{border-top:2px solid var(--deep)}
+.row{display:grid;grid-template-columns:72px 1fr;gap:var(--s4);padding:var(--s5) 0;border-bottom:1px solid rgba(10,51,80,.18)}
+.row .n{font-family:var(--serif);font-size:2rem;color:var(--pool);line-height:1}
+.row h3{font-size:1.7rem;color:var(--deep);margin-bottom:var(--s2)}
+.row p{color:var(--muted);margin:0}
+.tagline{display:inline-block;margin-top:var(--s3);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+.row dl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin:var(--s4) 0 0}
+.row dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.row dd{margin:var(--s1) 0 0;font-weight:600;color:var(--deep)}
+
+/* add-on cinematic */
+.addon{background:var(--deep);color:#fff;position:relative}
+.addon-intro{padding:var(--s8) 0 var(--s6)}
+.addon-intro .eyebrow{color:var(--pool-l)}
+.addon-top{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--s6);align-items:start}
+.addon h2{font-size:clamp(2.2rem,4vw,3.6rem)}
+.addon-intro p{color:#cfe0eb}
+.price-card{border:1px solid rgba(255,255,255,.25);border-radius:var(--r);padding:var(--s5)}
+.price-card .price{font-family:var(--serif);font-size:2.6rem;line-height:1}
+.price-card .price small{font-family:var(--sans);font-size:.9rem;color:#cfe0eb;margin-left:var(--s2)}
+.price-card ul{margin:var(--s4) 0 0;padding:0;list-style:none}
+.price-card li{padding:var(--s2) 0 var(--s2) var(--s5);position:relative;color:#e6eff5;border-top:1px solid rgba(255,255,255,.1)}
+.price-card li::before{content:"";position:absolute;left:0;top:19px;width:16px;height:2px;background:var(--pool-l)}
+.sample-note{margin-top:var(--s4);font-size:.88rem;color:#b9d3e3;border-left:3px solid #f0a33a;padding-left:var(--s3)}
+.cine-track{height:280vh;position:relative}
+.cine-stage{position:sticky;top:76px;height:calc(100vh - 76px);min-height:520px;display:flex;flex-direction:column;justify-content:center;padding:var(--s4) 0}
+.cine-stage svg{width:100%;height:auto;max-height:calc(100vh - 210px);display:block}
+.cine-ui{display:grid;grid-template-columns:1fr auto;gap:var(--s4);align-items:center;margin-top:var(--s4)}
+.chapters{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s2);list-style:none;margin:0;padding:0}
+.chapters li{border-top:3px solid rgba(255,255,255,.2);padding-top:var(--s2);font-size:.85rem;color:#9fbdd0;transition:color .3s,border-color .3s}
+.chapters li b{display:block;font-family:var(--serif);font-size:1.1rem;color:inherit;font-weight:600}
+.chapters li.on{border-color:var(--pool-l);color:#fff}
+.scrub{display:flex;align-items:center;gap:var(--s3);font-size:.85rem;color:#cfe0eb}
+.scrub input{width:180px;accent-color:var(--pool-l);height:44px}
+.reduced .cine-track{height:auto}
+.reduced .cine-stage{position:relative;top:0;height:auto}
+
+/* tool */
+.tool{padding:var(--s8) 0;background:var(--trav)}
+.tool-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s6);align-items:start}
+.tool h2{font-size:clamp(2.2rem,3.8vw,3.4rem);color:var(--deep)}
+.tool-lede{color:var(--muted);margin-top:var(--s3)}
+fieldset{border:0;padding:0;margin:var(--s5) 0 0}
+legend{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s3);padding:0}
+.shapes{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s2)}
+.shapes label{position:relative;display:flex;align-items:center;gap:var(--s3);min-height:64px;padding:var(--s2) var(--s3);border:1.5px solid rgba(10,51,80,.25);border-radius:var(--r);cursor:pointer;background:#fff;font-weight:600;color:var(--deep)}
+.shapes input{position:absolute;opacity:0;pointer-events:none}
+.shapes svg{width:44px;height:28px;flex:none}
+.shapes label:has(input:checked){border-color:var(--deep);box-shadow:inset 0 0 0 1.5px var(--deep);background:var(--foam)}
+.shapes label:has(input:focus-visible){outline:3px solid #f0a33a;outline-offset:2px}
+.len-row{display:flex;align-items:center;gap:var(--s4)}
+.len-row input{flex:1;accent-color:var(--deep);height:44px}
+.len-row output{font-family:var(--serif);font-size:2rem;color:var(--deep);min-width:4.2ch;text-align:right}
+.plan-card{background:#fff;border-radius:var(--r);border:1px solid rgba(10,51,80,.15);padding:var(--s4);box-shadow:0 30px 60px -40px rgba(10,51,80,.5)}
+.plan-card svg{width:100%;height:auto;display:block}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(10,51,80,.15);margin-top:var(--s3)}
+.stats div{padding:var(--s3) var(--s3) 0 0}
+.stats dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.stats dd{margin:var(--s1) 0 0;font-family:var(--serif);font-size:1.6rem;color:var(--deep);line-height:1.1}
+.est{font-size:.88rem;color:var(--muted);margin-top:var(--s4);padding:var(--s3);background:var(--trav);border-radius:var(--r)}
+.sample-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);border:1px solid var(--trav-d);padding:var(--s1) var(--s2);border-radius:3px;margin-bottom:var(--s3)}
+
+/* reviews */
+.reviews{background:var(--sand);padding:var(--s8) 0;position:relative;overflow:hidden}
+.reviews-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:var(--s6);align-items:end}
+.big-quote{font-family:var(--serif);font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1.2;color:var(--deep);margin:0;font-weight:400}
+.big-quote::before{content:"\201C";display:block;font-size:6rem;line-height:.6;color:var(--pool);height:.45em}
+figcaption{margin-top:var(--s4);font-weight:600;color:var(--muted);font-size:.95rem}
+.side-quotes{display:grid;gap:var(--s4)}
+.side-quotes figure{margin:0;background:var(--trav);padding:var(--s4);border-radius:var(--r);border-left:4px solid var(--pool)}
+.side-quotes blockquote{margin:0;font-family:var(--serif);font-size:1.2rem;line-height:1.35;color:var(--deep)}
+.side-quotes figcaption{margin-top:var(--s3)}
+
+/* visit */
+.visit{padding:var(--s8) 0;background:var(--trav)}
+.visit-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--deep)}
+.visit-grid > div{padding:var(--s5) var(--s4) var(--s5) 0}
+.visit-grid > div + div{border-left:1px solid rgba(10,51,80,.18);padding-left:var(--s4)}
+.visit h2{font-size:clamp(2.2rem,3.8vw,3.4rem);color:var(--deep);margin-bottom:var(--s5)}
+.visit h3{font-size:1.3rem;color:var(--deep);margin-bottom:var(--s3)}
+.visit p{color:var(--muted)}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:var(--s2) 0;border-bottom:1px dashed rgba(10,51,80,.2)}
+.hours td:last-child{text-align:right;font-weight:600;color:var(--deep)}
+.tel{font-family:var(--serif);font-size:1.5rem;color:var(--deep);text-decoration:none;display:inline-block;min-height:44px;padding:var(--s1) 0}
+.tel:hover{color:var(--pool)}
+
+/* contact */
+.contact{background:var(--deep);color:#fff;padding:var(--s8) 0}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--s7)}
+.contact h2{font-size:clamp(2.2rem,3.8vw,3.4rem)}
+.contact .lede{color:#cfe0eb;margin-top:var(--s4)}
+.form{background:var(--trav);color:var(--ink);border-radius:var(--r);padding:var(--s5)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.field{display:flex;flex-direction:column;gap:var(--s2)}
+.field.full{grid-column:1/-1}
+.field label{font-weight:600;font-size:.92rem;color:var(--deep)}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;padding:var(--s3);min-height:52px;border:1.5px solid rgba(10,51,80,.3);border-radius:var(--r);background:#fff;color:var(--ink)}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--deep);outline:none;box-shadow:0 0 0 3px rgba(31,127,179,.25)}
+.field .msg{display:none;color:#a3271b;font-size:.85rem;font-weight:600}
+.field.err input,.field.err select,.field.err textarea{border-color:#a3271b}
+.field.err .msg{display:block}
+.demo-note{font-size:.85rem;color:var(--muted);margin:var(--s3) 0 0}
+.done{background:var(--trav);color:var(--ink);border-radius:var(--r);padding:var(--s6) var(--s5)}
+.done h3{font-size:2rem;color:var(--deep);margin-bottom:var(--s3)}
+.done:focus{outline:none}
+
+/* footer */
+footer{background:var(--ink);color:#c9d4dc;padding:var(--s7) 0 var(--s6);font-size:.95rem}
+.ft{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:var(--s6)}
+footer h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:var(--s3)}
+footer a{color:#fff}
+footer p{margin:0 0 var(--s2)}
+.disc{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid rgba(255,255,255,.15);font-size:.86rem;color:#a9b8c3;max-width:70em}
+.sticky-call{display:none}
+
+@media (max-width:1024px){
+ .hero-grid,.spec-grid,.tool-grid,.addon-top,.contact-grid,.reviews-grid{grid-template-columns:1fr}
+ .spec-head{position:static}
+ .proof .wrap{grid-template-columns:1fr 1fr}
+ .proof-item:nth-child(3){border-left:0;padding-left:0}
+}
+@media (max-width:900px){
+ nav#nav{position:absolute;left:0;right:0;top:100%;background:var(--trav);border-bottom:1px solid rgba(10,51,80,.15);display:none}
+ nav#nav.open{display:block}
+ nav#nav ul{flex-direction:column;gap:0;padding:var(--s2) var(--s5) var(--s4)}
+ nav#nav a{display:block;padding:var(--s3) 0;border-bottom:1px solid rgba(10,51,80,.1)}
+ .menu-btn{display:block}
+ .visit-grid{grid-template-columns:1fr}
+ .visit-grid > div + div{border-left:0;padding-left:0;border-top:1px solid rgba(10,51,80,.18)}
+ .ft{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+ body{font-size:17px}
+ .wrap{padding:0 var(--s3)}
+ .hd-call .btn{display:none}
+ .hero{padding-top:var(--s6)}
+ .proof .wrap{grid-template-columns:1fr;gap:var(--s4)}
+ .proof-item{border-left:0;padding-left:0;border-top:1px solid rgba(255,255,255,.2);padding-top:var(--s3)}
+ .row{grid-template-columns:1fr;gap:var(--s2)}
+ .row dl{grid-template-columns:1fr 1fr}
+ .chapters{grid-template-columns:1fr 1fr}
+ .cine-ui{grid-template-columns:1fr}
+ .scrub input{flex:1;width:auto}
+ .fgrid{grid-template-columns:1fr}
+ .form{padding:var(--s4)}
+ .stats{grid-template-columns:1fr 1fr}
+ .shapes{grid-template-columns:1fr}
+ .sticky-call{display:flex;position:fixed;left:var(--s3);right:var(--s3);bottom:var(--s3);z-index:60;min-height:56px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+ footer{padding-bottom:112px}
+ .draw-cap{font-size:.7rem}
+ .section-draw{overflow:hidden}
+ .section-draw svg{width:190%;max-width:none;margin-left:-50%}
+ .cine-track{height:220vh}
+ .row dl{grid-template-columns:repeat(3,1fr)}
+ .row dd{font-size:.92rem}
+}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept">Website concept by <a href="https://www.lisettecolon.com">Lisette Colon</a>. A sample, not the official Pools by Ricciardi &amp; Son site.</div>
+
+<header class="site">
+ <div class="wrap hd">
+  <a class="brand" href="#top" aria-label="Pools by Ricciardi and Son, home">
+   <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="1" y="1" width="42" height="42" rx="6" fill="#0a3350"/><path d="M8 20h28v10a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6z" fill="#1f7fb3"/><path d="M8 24c4 0 4-2.5 7-2.5S19 24 22 24s4-2.5 7-2.5 4 2.5 7 2.5" stroke="#dff1f8" stroke-width="1.8" fill="none"/><path d="M22 4v10M18 10h8" stroke="#e9dcc6" stroke-width="1.8"/></svg>
+   <span><b>Ricciardi &amp; Son</b><small>Pools &middot; Lindenhurst</small></span>
+  </a>
+  <nav id="nav" aria-label="Main">
+   <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#install">The install</a></li>
+    <li><a href="#sizes">Shell sizes</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+   </ul>
+  </nav>
+  <div class="hd-call">
+   <a class="btn btn-deep" href="tel:+16315924410"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>(631) 592-4410</a>
+   <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+ </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+ <div class="wrap">
+  <div class="hero-grid">
+   <h1>A fiberglass pool, <span class="lift">lifted in by crane</span>, set into your backyard.</h1>
+   <div class="hero-side">
+    <p>Pools by Ricciardi &amp; Son installs in-ground fiberglass pools, pools and spas from Lindenhurst, for families across Nassau and Suffolk. Ask for Mike.</p>
+    <div class="hero-actions">
+     <a class="btn btn-deep" href="tel:+16315924410">Call (631) 592-4410</a>
+     <a class="btn btn-ghost" href="#contact">Request an estimate</a>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="section-draw">
+  <svg viewBox="0 0 1440 430" role="img" aria-label="Illustrated cross-section of a backyard with a fiberglass pool shell set into the ground, filled with water, with a travertine deck and lounge chair.">
+   <defs>
+    <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fb3dc"/><stop offset="1" stop-color="#0e4466"/></linearGradient>
+    <pattern id="soil" width="18" height="18" patternUnits="userSpaceOnUse"><rect width="18" height="18" fill="#c9b08a"/><circle cx="4" cy="5" r="1.4" fill="#ad9068"/><circle cx="13" cy="12" r="1.1" fill="#ad9068"/><circle cx="9" cy="16" r=".8" fill="#b89c75"/></pattern>
+    <pattern id="soil2" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#a88a63"/><circle cx="6" cy="6" r="1.6" fill="#8d7150"/><circle cx="16" cy="15" r="1.2" fill="#8d7150"/></pattern>
+    <clipPath id="hwclip"><path d="M520 182 L520 262 Q520 282 540 282 L760 282 L850 340 L1000 340 Q1020 340 1020 320 L1020 182 Z"/></clipPath>
+   </defs>
+   <rect x="0" y="170" width="1440" height="90" fill="url(#soil)"/>
+   <rect x="0" y="260" width="1440" height="170" fill="url(#soil2)"/>
+   <!-- lawn -->
+   <rect x="0" y="160" width="1440" height="12" fill="#6f9a52"/>
+   <g fill="#5a8443"><path d="M60 160l4-10 3 10M110 160l3-8 4 8M1240 160l4-11 3 11M1330 160l3-8 4 8M1390 160l4-10 3 10"/></g>
+   <!-- house edge -->
+   <g>
+    <rect x="70" y="40" width="250" height="120" fill="#efe6d6" stroke="#0a3350" stroke-width="2"/>
+    <path d="M55 44 L195 0 L335 44" fill="none" stroke="#0a3350" stroke-width="2"/>
+    <rect x="110" y="82" width="56" height="78" fill="#fff" stroke="#0a3350" stroke-width="2"/>
+    <rect x="210" y="74" width="70" height="46" fill="#cfe7f2" stroke="#0a3350" stroke-width="2"/>
+    <path d="M245 74v46M210 97h70" stroke="#0a3350" stroke-width="1.5"/>
+   </g>
+   <!-- deck pavers -->
+   <g fill="#efe3cc" stroke="#cdb995" stroke-width="1.5">
+    <rect x="380" y="164" width="46" height="10"/><rect x="428" y="164" width="46" height="10"/><rect x="476" y="164" width="46" height="10"/>
+    <rect x="1018" y="164" width="46" height="10"/><rect x="1066" y="164" width="46" height="10"/><rect x="1114" y="164" width="46" height="10"/>
+   </g>
+   <!-- shell -->
+   <path d="M512 172 L512 262 Q512 290 540 290 L758 290 L848 348 L1000 348 Q1028 348 1028 320 L1028 172" fill="#f6fbfd" stroke="#0a3350" stroke-width="2"/>
+   <g clip-path="url(#hwclip)">
+    <rect x="500" y="190" width="540" height="160" fill="url(#hw)"/>
+    <g class="wave-anim"><path d="M480 192 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" stroke="#dff1f8" stroke-width="2" fill="none" opacity=".9"/>
+    <path d="M500 230 q30 -4 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" stroke="#dff1f8" stroke-width="1" fill="none" opacity=".35"/></g>
+   </g>
+   <!-- coping -->
+   <rect x="498" y="162" width="30" height="12" fill="#e9dcc6" stroke="#0a3350" stroke-width="1.5"/>
+   <rect x="1012" y="162" width="30" height="12" fill="#e9dcc6" stroke="#0a3350" stroke-width="1.5"/>
+   <!-- chair -->
+   <g stroke="#0a3350" stroke-width="2" fill="none"><path d="M1170 160 l10 -26 l90 0 l10 26"/><path d="M1180 134 l-20 -30"/><rect x="1180" y="128" width="90" height="6" fill="#1f7fb3"/></g>
+   <!-- dimension annotations -->
+   <g stroke="#0a3350" stroke-width="1" fill="none" opacity=".8">
+    <path d="M512 380 L1028 380"/><path d="M512 372v16M1028 372v16"/>
+    <path d="M1080 182 L1080 348"/><path d="M1072 182h16M1072 348h16"/>
+   </g>
+   <g font-family="Albert Sans, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#0a3350">
+    <text x="770" y="406" text-anchor="middle">ONE-PIECE FIBERGLASS SHELL</text>
+    <text x="1096" y="270">SHALLOW TO DEEP</text>
+    <text x="545" y="152">COPING</text>
+   </g>
+  </svg>
+  <div class="wrap draw-cap"><span>Fig. 1, a crane-set fiberglass pool in section</span><span>Illustration, not to scale</span></div>
+ </div>
+</section>
+
+<section class="proof" aria-label="At a glance">
+ <div class="wrap">
+  <div class="score"><b>4.8</b><div><div class="stars" aria-label="4.8 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z" fill="#f0c36a"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z" fill="#f0c36a"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z" fill="#f0c36a"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z" fill="#f0c36a"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z" fill="#f0c36a" opacity=".55"/></svg></div><span style="font-size:.9rem;color:#c5d9e6">on Google</span></div></div>
+  <div class="proof-item"><b>48 reviews</b><span>from Long Island homeowners</span></div>
+  <div class="proof-item"><b>Lindenhurst, NY</b><span>1 Bahama Street</span></div>
+  <div class="proof-item"><b>Nassau and Suffolk</b><span>pools and spas island-wide</span></div>
+ </div>
+</section>
+
+<section class="spec" id="services">
+ <div class="wrap spec-grid">
+  <div class="spec-head">
+   <p class="eyebrow">What we build</p>
+   <h2>One shell, made in a single piece, set into place by crane.</h2>
+   <p>Fiberglass is the work customers mention most in reviews. A fiberglass shell is made off-site and arrives in one piece, ready to be set.</p>
+   <a class="btn btn-ghost" href="#sizes">Try the shell size picker</a>
+  </div>
+  <div class="rows">
+   <article class="row">
+    <span class="n">01</span>
+    <div>
+     <h3>In-ground fiberglass pools</h3>
+     <p>From the first measurements to the day the water goes in. We help you pick a shape and size that fits the yard, the setbacks and the way your family swims.</p>
+     <span class="tagline">Most mentioned in Google reviews</span>
+     <dl><div><dt>Shell</dt><dd>One piece</dd></div><div><dt>Finish</dt><dd>Smooth gelcoat</dd></div><div><dt>Fit</dt><dd>Sized to your yard</dd></div></dl>
+    </div>
+   </article>
+   <article class="row">
+    <span class="n">02</span>
+    <div>
+     <h3>Crane lift installs</h3>
+     <p>When a shell can't come through the side gate, it comes over the house. The crane sets it straight into a prepared, leveled excavation.</p>
+     <dl><div><dt>Access</dt><dd>Over the roof</dd></div><div><dt>Set</dt><dd>Level and plumb</dd></div><div><dt>Shell</dt><dd>Arrives whole</dd></div></dl>
+    </div>
+   </article>
+   <article class="row">
+    <span class="n">03</span>
+    <div>
+     <h3>Pools and spas</h3>
+     <p>Pools and spas are both part of the work. Every backyard is different, so the first step is a conversation with Mike about yours.</p>
+     <dl><div><dt>Spas</dt><dd>Ask about options</dd></div><div><dt>First step</dt><dd>A phone call</dd></div><div><dt>Area</dt><dd>Nassau, Suffolk</dd></div></dl>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="addon" id="install" aria-labelledby="addon-h">
+ <div class="wrap addon-intro">
+  <p class="eyebrow">Featured add-on in this concept</p>
+  <div class="addon-top">
+   <div>
+    <h2 id="addon-h">Cinematic scroll: watch the install happen as you scroll.</h2>
+    <p style="margin-top:var(--s4)">Homeowners rarely picture how a pool goes in. This section tells the story in four chapters: the dig, the crane lift, the set, and the fill. Scroll down and the drawing plays forward. Scroll up and it rewinds.</p>
+   </div>
+   <div class="price-card">
+    <div class="price">$600<small>one-time, from</small></div>
+    <ul>
+     <li>Custom illustrated scene in your colors</li>
+     <li>Scroll-linked animation with chapter captions</li>
+     <li>Manual slider for visitors who prefer it</li>
+     <li>Reduced-motion and phone versions</li>
+    </ul>
+    <p class="sample-note">Sample feature. The drawing is an illustration of a typical crane-set fiberglass install, not footage or plans of a real Ricciardi &amp; Son project.</p>
+   </div>
+  </div>
+ </div>
+ <div class="cine-track" id="cineTrack">
+  <div class="cine-stage">
+   <div class="wrap">
+    <svg id="cine" viewBox="0 0 1200 600" role="img" aria-label="Animated illustration: a fiberglass pool shell is lowered by crane into an excavated backyard, then filled with water and finished with a deck.">
+     <defs>
+      <pattern id="c-soil" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#8b6f4e"/><circle cx="5" cy="6" r="1.5" fill="#735a3e"/><circle cx="14" cy="14" r="1.2" fill="#735a3e"/></pattern>
+      <pattern id="c-fill" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#b69a72"/><circle cx="4" cy="4" r="1" fill="#9d8160"/><circle cx="10" cy="10" r="1" fill="#9d8160"/></pattern>
+      <linearGradient id="c-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fc0e4"/><stop offset="1" stop-color="#14608c"/></linearGradient>
+      <clipPath id="c-inner"><path d="M436 380 L436 452 Q436 464 448 464 L618 464 L698 524 L862 524 Q874 524 874 512 L874 380 Z"/></clipPath>
+     </defs>
+     <!-- sky band -->
+     <rect width="1200" height="380" fill="#0e4466"/>
+     <g fill="#1a5679"><circle cx="1050" cy="90" r="46"/></g>
+     <!-- house at back right -->
+     <g transform="translate(960 230)">
+      <rect x="0" y="40" width="210" height="110" fill="#174e70" stroke="#5a8fb0" stroke-width="2"/>
+      <path d="M-14 44 L105 -10 L224 44" fill="none" stroke="#5a8fb0" stroke-width="2"/>
+      <rect x="30" y="70" width="40" height="40" fill="#f0c36a" opacity=".85"/><rect x="130" y="70" width="40" height="40" fill="#f0c36a" opacity=".55"/>
+     </g>
+     <!-- ground -->
+     <rect x="0" y="380" width="1200" height="220" fill="url(#c-soil)"/>
+     <rect x="0" y="372" width="1200" height="10" fill="#4f7a3a"/>
+     <!-- excavation -->
+     <path d="M420 380 L420 458 Q420 480 442 480 L612 480 L692 540 L870 540 Q890 540 890 520 L890 380 Z" fill="#5d4730"/>
+     <!-- backfill (appears) -->
+     <g id="c-backfill" opacity="0"><path d="M420 380 L420 458 Q420 480 442 480 L612 480 L692 540 L870 540 Q890 540 890 520 L890 380 L880 380 L880 512 Q880 530 862 530 L700 530 L620 470 L448 470 Q430 470 430 452 L430 380 Z" fill="url(#c-fill)"/></g>
+     <!-- crane -->
+     <g id="c-crane">
+      <rect x="40" y="320" width="260" height="44" rx="4" fill="#f0a33a"/>
+      <rect x="40" y="290" width="70" height="40" rx="4" fill="#f0a33a"/>
+      <rect x="52" y="298" width="44" height="20" fill="#0e4466"/>
+      <circle cx="80" cy="366" r="14" fill="#10202c"/><circle cx="170" cy="366" r="14" fill="#10202c"/><circle cx="250" cy="366" r="14" fill="#10202c"/>
+      <path d="M300 352 L340 376 M40 352 L10 376" stroke="#f0a33a" stroke-width="8"/>
+      <rect x="200" y="296" width="70" height="28" fill="#d88a24"/>
+      <line id="c-boom" x1="240" y1="304" x2="655" y2="40" stroke="#f0a33a" stroke-width="16" stroke-linecap="round"/>
+      <line x1="240" y1="304" x2="655" y2="40" stroke="#d88a24" stroke-width="4" stroke-dasharray="14 10"/>
+     </g>
+     <!-- cable + rigging -->
+     <line id="c-cable" x1="655" y1="46" x2="655" y2="130" stroke="#e8eef2" stroke-width="3"/>
+     <g id="c-rig">
+      <rect id="c-hook" x="645" y="128" width="20" height="14" rx="3" fill="#e8eef2"/>
+      <line id="c-r1" x1="655" y1="140" x2="440" y2="380" stroke="#e8eef2" stroke-width="2"/>
+      <line id="c-r2" x1="655" y1="140" x2="870" y2="380" stroke="#e8eef2" stroke-width="2"/>
+     </g>
+     <!-- shell -->
+     <g id="c-shell">
+      <path d="M430 380 L430 452 Q430 470 448 470 L620 470 L700 530 L862 530 Q880 530 880 512 L880 380" fill="#f6fbfd" stroke="#dff1f8" stroke-width="2"/>
+      <path d="M436 380 L436 452 Q436 464 448 464 L618 464 L698 524 L862 524 Q874 524 874 512 L874 380" fill="#e7f2f7"/>
+      <g clip-path="url(#c-inner)"><rect id="c-waterRect" x="430" y="530" width="460" height="0" fill="url(#c-water)"/></g>
+      <path id="c-surface" d="M436 392 H874" stroke="#dff1f8" stroke-width="2" opacity="0"/>
+     </g>
+     <!-- finish -->
+     <g id="c-finish" opacity="0">
+      <rect x="414" y="368" width="30" height="14" fill="#e9dcc6"/><rect x="866" y="368" width="30" height="14" fill="#e9dcc6"/>
+      <g fill="#efe3cc" stroke="#cdb995" stroke-width="1.5"><rect x="320" y="370" width="46" height="12"/><rect x="368" y="370" width="46" height="12"/><rect x="896" y="370" width="46" height="12"/><rect x="944" y="370" width="46" height="12"/></g>
+      <g stroke="#e8eef2" stroke-width="2.5" fill="none"><path d="M950 370 l8 -20 l70 0 l8 20"/><path d="M958 350 l-16 -24"/></g>
+     </g>
+     <g font-family="Albert Sans, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#dff1f8">
+      <text id="c-label" x="40" y="60">01  EXCAVATED AND GRADED</text>
+     </g>
+    </svg>
+    <div class="cine-ui">
+     <ol class="chapters" id="chapters">
+      <li class="on"><b>Dig</b>Excavate and grade</li>
+      <li><b>Lift</b>Crane over the house</li>
+      <li><b>Set</b>Level and backfill</li>
+      <li><b>Fill</b>Water, coping, deck</li>
+     </ol>
+     <label class="scrub">Scrub <input type="range" id="scrub" min="0" max="100" value="0" aria-label="Install animation progress"></label>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="tool" id="sizes">
+ <div class="wrap tool-grid">
+  <div>
+   <span class="sample-tag">Sample tool</span>
+   <h2>Picture your shell before the first call.</h2>
+   <p class="tool-lede">Choose a shape and a length. The drawing redraws to scale on a 2 foot grid, and the volume is worked out from those dimensions.</p>
+   <form id="shellForm" onsubmit="return false">
+    <fieldset>
+     <legend>Shape</legend>
+     <div class="shapes">
+      <label><input type="radio" name="shape" value="rect" checked><svg viewBox="0 0 44 28" aria-hidden="true"><rect x="3" y="5" width="38" height="18" rx="2" fill="#7cc3e3" stroke="#0a3350" stroke-width="1.5"/></svg>Rectangle</label>
+      <label><input type="radio" name="shape" value="roman"><svg viewBox="0 0 44 28" aria-hidden="true"><path d="M8 5h28a6 9 0 0 1 0 18H8a6 9 0 0 1 0-18z" fill="#7cc3e3" stroke="#0a3350" stroke-width="1.5"/></svg>Roman end</label>
+      <label><input type="radio" name="shape" value="free"><svg viewBox="0 0 44 28" aria-hidden="true"><path d="M6 14c0-8 8-10 14-8s8 4 14 2 8 4 6 9-8 8-16 6-8-4-12-2-6-1-6-7z" fill="#7cc3e3" stroke="#0a3350" stroke-width="1.5"/></svg>Freeform</label>
+      <label><input type="radio" name="shape" value="plunge"><svg viewBox="0 0 44 28" aria-hidden="true"><rect x="10" y="6" width="24" height="16" rx="2" fill="#7cc3e3" stroke="#0a3350" stroke-width="1.5"/></svg>Plunge / spa size</label>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Length</legend>
+     <div class="len-row"><input type="range" id="len" min="24" max="40" step="2" value="32" aria-label="Pool length in feet"><output id="lenOut" for="len">32 ft</output></div>
+    </fieldset>
+   </form>
+  </div>
+  <div class="plan-card">
+   <svg id="plan" viewBox="0 0 480 280" role="img" aria-label="Top view drawing of the selected pool shape, to scale"></svg>
+   <dl class="stats" aria-live="polite">
+    <div><dt>Size</dt><dd id="stSize">32 x 14 ft</dd></div>
+    <div><dt>Surface</dt><dd id="stArea">435 sq ft</dd></div>
+    <div><dt>Water, approx.</dt><dd id="stGal">15,400 gal</dd></div>
+   </dl>
+   <p class="est">Estimate for illustration only. Widths and depths are typical proportions, not a specific manufacturer model. Actual shells, sizes and volumes vary, so ask Mike for real options.</p>
+  </div>
+ </div>
+</section>
+
+<section class="reviews" id="reviews">
+ <div class="wrap">
+  <p class="eyebrow">From Google reviews</p>
+  <div class="reviews-grid">
+   <figure style="margin:0">
+    <blockquote class="big-quote">Building a pool from scratch involves a lot of coordination, and Mike made the entire process much easier.</blockquote>
+    <figcaption>Or S., Google review</figcaption>
+   </figure>
+   <div class="side-quotes">
+    <figure><blockquote>My backyard looks transformed, and the pool has added so much value to our home!</blockquote><figcaption>Google review</figcaption></figure>
+    <figure><blockquote>My family are very happy with their service.</blockquote><figcaption>Google review</figcaption></figure>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="wrap">
+  <h2>Find us in Lindenhurst.</h2>
+  <div class="visit-grid">
+   <div>
+    <h3>Address</h3>
+    <p>1 Bahama Street<br>Lindenhurst, NY 11757</p>
+    <p>Serving Long Island, Nassau and Suffolk.</p>
+   </div>
+   <div>
+    <h3>Hours</h3>
+    <table class="hours"><tbody>
+     <tr><td>Monday to Friday</td><td>Until 5 PM</td></tr>
+     <tr><td>Saturday and Sunday</td><td>Call for hours</td></tr>
+    </tbody></table>
+   </div>
+   <div>
+    <h3>Call</h3>
+    <a class="tel" href="tel:+16315924410">(631) 592-4410</a><br>
+    <a class="tel" href="tel:+15166761173">(516) 676-1173</a>
+    <p style="margin-top:var(--s2)">Ask for Mike.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap contact-grid">
+  <div>
+   <p class="eyebrow" style="color:var(--pool-l)">Estimate request</p>
+   <h2>Tell us about the yard.</h2>
+   <p class="lede">A few details help Mike come prepared: where you are, what you have in mind and when you would like to swim.</p>
+   <p class="lede">Prefer to talk? <a href="tel:+16315924410" style="color:#fff;font-weight:700">(631) 592-4410</a></p>
+  </div>
+  <div>
+   <form class="form" data-demo data-done="done1" novalidate>
+    <div class="fgrid">
+     <div class="field"><label for="f-name">Name *</label><input id="f-name" name="name" required autocomplete="name"><span class="msg">Please add your name.</span></div>
+     <div class="field"><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" required autocomplete="tel"><span class="msg">Please add a phone number.</span></div>
+     <div class="field"><label for="f-town">Town *</label><input id="f-town" name="town" required><span class="msg">Which town is the yard in?</span></div>
+     <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"><span class="msg">That email looks incomplete.</span></div>
+     <div class="field full"><label for="f-type">Project *</label><select id="f-type" name="type" required><option value="">Choose one</option><option>New in-ground fiberglass pool</option><option>Pool with spa</option><option>Spa</option><option>Something else</option></select><span class="msg">Please choose a project.</span></div>
+     <div class="field full"><label for="f-msg">Anything else</label><textarea id="f-msg" name="msg" placeholder="Yard size, side gate width, timing..."></textarea></div>
+    </div>
+    <button class="btn btn-deep" type="submit" style="margin-top:var(--s4);width:100%">Send estimate request</button>
+    <p class="demo-note">Demo form. This is a website concept. Nothing is sent or saved.</p>
+   </form>
+   <div class="done" id="done1" hidden tabindex="-1">
+    <h3>Demo complete.</h3>
+    <p>This is a website concept, so nothing was sent or saved. On the live site, this request would go straight to Ricciardi &amp; Son.</p>
+    <button class="btn btn-deep restart" type="button">Start over</button>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="ft">
+   <div>
+    <h4>Pools by Ricciardi &amp; Son</h4>
+    <p>1 Bahama Street, Lindenhurst, NY 11757</p>
+    <p>Monday to Friday until 5 PM. Call for weekend hours.</p>
+   </div>
+   <div>
+    <h4>Call</h4>
+    <p><a href="tel:+16315924410">(631) 592-4410</a></p>
+    <p><a href="tel:+15166761173">(516) 676-1173</a></p>
+   </div>
+   <div>
+    <h4>On this page</h4>
+    <p><a href="#services">Services</a></p>
+    <p><a href="#sizes">Shell size picker</a></p>
+    <p><a href="#contact">Estimate request</a></p>
+   </div>
+  </div>
+  <p class="disc">Independent website concept designed by Lisette Colon. Not affiliated with or approved by Pools by Ricciardi &amp; Son. Address, hours, rating and review quotes are from the business's public Google listing, checked October 2026. Service descriptions are written from the listing and reviews, details to confirm with the owner. All drawings are illustrations, not real projects. The cinematic scroll, shell size picker and estimate form are sample features: shell sizes and water volumes are illustrative estimates, and nothing entered here is sent or saved.</p>
+ </div>
+</footer>
+<a class="btn btn-deep sticky-call" href="tel:+16315924410">Call (631) 592-4410</a>
+
+<script>
+(function(){
+ // mobile menu
+ const btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+ btn.addEventListener('click',()=>{const o=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!o));nav.classList.toggle('open',!o)});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{btn.setAttribute('aria-expanded','false');nav.classList.remove('open')}));
+
+ // demo forms
+ document.querySelectorAll('form[data-demo]').forEach(f=>{
+  const done=document.getElementById(f.dataset.done);
+  f.addEventListener('submit',e=>{
+   e.preventDefault();let first=null;
+   f.querySelectorAll('input,select,textarea').forEach(el=>{
+    const v=el.value.trim();let bad=el.required&&!v;
+    if(el.type==='email'&&v&&!/^\S+@\S+\.\S+$/.test(v))bad=true;
+    const fl=el.closest('.field');if(fl)fl.classList.toggle('err',bad);
+    el.setAttribute('aria-invalid',bad?'true':'false');
+    if(bad&&!first)first=el;
+   });
+   if(first){first.focus();return}
+   f.hidden=true;done.hidden=false;done.focus();
+  });
+  done.querySelector('.restart').addEventListener('click',()=>{f.reset();f.querySelectorAll('.err').forEach(x=>x.classList.remove('err'));f.hidden=false;done.hidden=true;f.querySelector('input').focus()});
+ });
+
+ // cinematic scroll
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const track=document.getElementById('cineTrack'),scrub=document.getElementById('scrub');
+ if(reduce)document.body.classList.add('reduced');
+ const $=id=>document.getElementById(id);
+ const shell=$('c-shell'),water=$('c-waterRect'),surface=$('c-surface'),cable=$('c-cable'),rig=$('c-rig'),hook=$('c-hook'),r1=$('c-r1'),r2=$('c-r2'),backfill=$('c-backfill'),finish=$('c-finish'),label=$('c-label');
+ const chap=[...document.querySelectorAll('#chapters li')];
+ const cl=(v,a,b)=>Math.min(b,Math.max(a,v));
+ const seg=(p,a,b)=>cl((p-a)/(b-a),0,1);
+ const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+ const labels=['01  EXCAVATED AND GRADED','02  LIFTED IN BY CRANE','03  SET, LEVELED, BACKFILLED','04  FILLED AND FINISHED'];
+ function render(p){
+  const lower=ease(seg(p,.08,.48));
+  const dy=-250*(1-lower);
+  shell.setAttribute('transform','translate(0 '+dy+')');
+  const release=seg(p,.5,.6);
+  const hookY=310+dy-release*200;
+  cable.setAttribute('y2',hookY);
+  hook.setAttribute('y',hookY-2);
+  r1.setAttribute('y1',hookY+10);r2.setAttribute('y1',hookY+10);
+  r1.setAttribute('y2',380+dy);r2.setAttribute('y2',380+dy);
+  r1.style.opacity=r2.style.opacity=String(1-release);
+  backfill.setAttribute('opacity',seg(p,.52,.62));
+  const fill=ease(seg(p,.62,.9));
+  const h=fill*(530-392);
+  water.setAttribute('y',530-h);water.setAttribute('height',h);
+  surface.setAttribute('opacity',fill>.98?1:0);
+  finish.setAttribute('opacity',seg(p,.86,.98));
+  const fade=1-.7*seg(p,.86,.98);$('c-crane').style.opacity=fade;cable.style.opacity=rig.style.opacity=fade;
+  const c=p<.08?0:p<.5?1:p<.62?2:3;
+  label.textContent=labels[c];
+  chap.forEach((li,i)=>li.classList.toggle('on',i<=c));
+ }
+ let ticking=false;
+ function onScroll(){
+  if(reduce)return;
+  if(ticking)return;ticking=true;
+  requestAnimationFrame(()=>{
+   const r=track.getBoundingClientRect();const total=r.height-window.innerHeight;
+   const p=cl(-r.top/total,0,1);render(p);scrub.value=Math.round(p*100);ticking=false;
+  });
+ }
+ window.addEventListener('scroll',onScroll,{passive:true});
+ scrub.addEventListener('input',()=>{
+  const p=scrub.value/100;
+  if(reduce){render(p);return}
+  const r=track.getBoundingClientRect();const top=window.scrollY+r.top;const total=r.height-window.innerHeight;
+  window.scrollTo({top:top+p*total,behavior:'auto'});render(p);
+ });
+ if(reduce)render(1),scrub.value=100;else onScroll();
+
+ // shell size picker
+ const plan=$('plan'),len=$('len'),lenOut=$('lenOut');
+ const SH={
+  rect:{min:24,max:40,w:L=>Math.max(12,Math.round(L*.44)),area:.97,depth:4.75,name:'Rectangle'},
+  roman:{min:24,max:40,w:L=>Math.max(12,Math.round(L*.42)),area:.9,depth:4.75,name:'Roman end'},
+  free:{min:24,max:40,w:L=>Math.max(12,Math.round(L*.45)),area:.78,depth:4.6,name:'Freeform'},
+  plunge:{min:10,max:16,w:L=>Math.round(L*.6),area:.97,depth:5,name:'Plunge'}
+ };
+ function shapePath(k,x,y,w,h){
+  if(k==='rect'||k==='plunge'){const r=Math.min(w,h)*.08;return `M${x+r} ${y}H${x+w-r}Q${x+w} ${y} ${x+w} ${y+r}V${y+h-r}Q${x+w} ${y+h} ${x+w-r} ${y+h}H${x+r}Q${x} ${y+h} ${x} ${y+h-r}V${y+r}Q${x} ${y} ${x+r} ${y}Z`}
+  if(k==='roman'){const e=h*.32;return `M${x+e} ${y}H${x+w-e}A${e} ${h/2} 0 0 1 ${x+w-e} ${y+h}H${x+e}A${e} ${h/2} 0 0 1 ${x+e} ${y}Z`}
+  return `M${x+w*.08} ${y+h*.55}C${x} ${y+h*.15} ${x+w*.25} ${y-h*.02} ${x+w*.45} ${y+h*.12}S${x+w*.7} ${y+h*.22} ${x+w*.85} ${y+h*.08}S${x+w*1.02} ${y+h*.4} ${x+w*.94} ${y+h*.72}S${x+w*.68} ${y+h*1.02} ${x+w*.48} ${y+h*.88}S${x+w*.24} ${y+h*.9} ${x+w*.14} ${y+h*.86}S${x+w*.1} ${y+h*.7} ${x+w*.08} ${y+h*.55}Z`;
+ }
+ function drawPlan(){
+  const k=document.querySelector('input[name=shape]:checked').value,s=SH[k];
+  if(+len.min!==s.min||+len.max!==s.max){len.min=s.min;len.max=s.max;len.value=cl(+len.value,s.min,s.max);if(k==='plunge')len.value=14;else if(+len.value<24)len.value=32}
+  const L=+len.value,W=s.w(L);
+  lenOut.textContent=L+' ft';
+  const ft=10,ox=40,oy=30;
+  let g='<rect width="480" height="280" fill="#fbf8f2"/>';
+  for(let i=0;i<=44;i+=2)g+=`<line x1="${ox+i*ft}" y1="${oy}" x2="${ox+i*ft}" y2="${oy+220}" stroke="#e7ddcc" stroke-width="${i%10===0?1.2:.6}"/>`;
+  for(let j=0;j<=22;j+=2)g+=`<line x1="${ox}" y1="${oy+j*ft}" x2="${ox+440}" y2="${oy+j*ft}" stroke="#e7ddcc" stroke-width="${j%10===0?1.2:.6}"/>`;
+  const w=L*ft,h=W*ft,x=ox+(440-w)/2,y=oy+(220-h)/2;
+  g+=`<path d="${shapePath(k,x-8,y-8,w+16,h+16)}" fill="#efe3cc" stroke="#cdb995"/>`;
+  g+=`<path d="${shapePath(k,x,y,w,h)}" fill="#7cc3e3" stroke="#0a3350" stroke-width="2"/>`;
+  g+=`<path d="M${x+w*.2} ${y+h*.4}q14 -5 28 0t28 0" stroke="#dff1f8" stroke-width="2" fill="none"/><path d="M${x+w*.55} ${y+h*.62}q14 -5 28 0t28 0" stroke="#dff1f8" stroke-width="2" fill="none"/>`;
+  g+=`<g stroke="#0a3350" stroke-width="1"><line x1="${x}" y1="${y+h+22}" x2="${x+w}" y2="${y+h+22}"/><line x1="${x}" y1="${y+h+16}" x2="${x}" y2="${y+h+28}"/><line x1="${x+w}" y1="${y+h+16}" x2="${x+w}" y2="${y+h+28}"/></g>`;
+  g+=`<text x="${x+w/2}" y="${Math.min(274,y+h+40)}" text-anchor="middle" font-family="Albert Sans,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0a3350">${L} ft</text>`;
+  g+=`<text x="${ox}" y="20" font-family="Albert Sans,system-ui,sans-serif" font-size="11" letter-spacing="1.5" font-weight="700" fill="#4c5a64">TOP VIEW  ·  1 SQUARE = 2 FT  ·  ${s.name.toUpperCase()}</text>`;
+  plan.innerHTML=g;
+  const area=Math.round(L*W*s.area);
+  const gal=Math.round(area*s.depth*7.48/100)*100;
+  $('stSize').textContent=L+' x '+W+' ft';
+  $('stArea').textContent=area.toLocaleString()+' sq ft';
+  $('stGal').textContent=gal.toLocaleString()+' gal';
+ }
+ document.querySelectorAll('input[name=shape]').forEach(r=>r.addEventListener('change',drawPlan));
+ len.addEventListener('input',drawPlan);
+ drawPlan();
+})();
+</script>
+</body>
+</html>
