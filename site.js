@@ -5,8 +5,11 @@
  // mobile menu
  const btn=document.querySelector('.menu-btn'),nav=$('nav');
  if(btn&&nav){
-  const close=()=>{btn.setAttribute('aria-expanded','false');nav.classList.remove('open')};
-  btn.addEventListener('click',()=>{const o=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!o));nav.classList.toggle('open',!o)});
+  const lbl=btn.querySelector('b');
+  const set=o=>{btn.setAttribute('aria-expanded',String(o));nav.classList.toggle('open',o);if(lbl)lbl.textContent=o?'Close':'Menu'};
+  const close=()=>set(false);
+  btn.addEventListener('click',()=>set(btn.getAttribute('aria-expanded')!=='true'));
+  window.matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)close()});
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){close();btn.focus()}});
  }
